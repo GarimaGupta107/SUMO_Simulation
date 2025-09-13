@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-09-13 18:37:27 by Eclipse SUMO netedit Version 1.24.0
+<neteditConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/neteditConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="D:\Test\TRAFFIC.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="D:\Test\TRAFFIC.net.xml"/>
+    </output>
+
+    <processing>
+        <offset.disable-normalization value="true"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+    </junctions>
+
+    <netedit>
+        <new-network value="false"/>
+    </netedit>
+
+</neteditConfiguration>
+-->
+
+<net version="1.20" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="-156.33,33.99,98.82,36.76" origBoundary="10000000000.00,10000000000.00,-10000000000.00,-10000000000.00" projParameter="!"/>
+
+    <edge id=":clusterJ2_J3_0" function="internal">
+        <lane id=":clusterJ2_J3_0_0" index="0" speed="13.89" length="7.51" shape="-46.63,36.78 -54.14,36.70"/>
+    </edge>
+    <edge id=":clusterJ2_J3_1" function="internal">
+        <lane id=":clusterJ2_J3_1_0" index="0" speed="13.89" length="7.51" shape="-54.11,33.50 -46.59,33.58"/>
+    </edge>
+
+    <edge id="E-W" from="J0" to="clusterJ2_J3" priority="-1" shape="-156.33,33.99 -46.61,35.18">
+        <lane id="E-W_0" index="0" speed="13.89" length="102.21" shape="-156.31,32.39 -54.11,33.50"/>
+    </edge>
+    <edge id="E-W-1" from="clusterJ2_J3" to="J1" priority="-1" shape="-46.61,35.18 98.82,36.76">
+        <lane id="E-W-1_0" index="0" speed="13.89" length="145.44" shape="-46.59,33.58 98.83,35.16"/>
+    </edge>
+    <edge id="W-E" from="J1" to="clusterJ2_J3" priority="-1" shape="98.82,36.76 -54.13,35.10">
+        <lane id="W-E_0" index="0" speed="13.89" length="145.44" shape="98.80,38.36 -46.63,36.78"/>
+    </edge>
+    <edge id="W-E-1" from="clusterJ2_J3" to="J0" priority="-1" shape="-54.13,35.10 -156.33,33.99">
+        <lane id="W-E-1_0" index="0" speed="13.89" length="102.21" shape="-54.14,36.70 -156.34,35.59"/>
+    </edge>
+
+    <tlLogic id="clusterJ2_J3" type="static" programID="0" offset="0">
+        <phase duration="82" state="GG"/>
+        <phase duration="3"  state="yy"/>
+        <phase duration="5"  state="rr"/>
+    </tlLogic>
+
+    <junction id="J0" type="dead_end" x="-156.33" y="33.99" incLanes="W-E-1_0" intLanes="" shape="-156.33,33.99 -156.36,37.19 -156.33,33.99"/>
+    <junction id="J1" type="dead_end" x="98.82" y="36.76" incLanes="E-W-1_0" intLanes="" shape="98.82,36.76 98.85,33.56 98.82,36.76"/>
+    <junction id="clusterJ2_J3" type="traffic_light" x="-50.37" y="35.14" incLanes="W-E_0 E-W_0" intLanes=":clusterJ2_J3_0_0 :clusterJ2_J3_1_0" shape="-46.65,38.38 -46.58,31.98 -54.09,31.90 -54.16,38.30">
+        <request index="0" response="00" foes="00" cont="0"/>
+        <request index="1" response="00" foes="00" cont="0"/>
+    </junction>
+
+    <connection from="E-W" to="E-W-1" fromLane="0" toLane="0" via=":clusterJ2_J3_1_0" tl="clusterJ2_J3" linkIndex="1" dir="s" state="O"/>
+    <connection from="W-E" to="W-E-1" fromLane="0" toLane="0" via=":clusterJ2_J3_0_0" tl="clusterJ2_J3" linkIndex="0" dir="s" state="O"/>
+
+    <connection from=":clusterJ2_J3_0" to="W-E-1" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":clusterJ2_J3_1" to="E-W-1" fromLane="0" toLane="0" dir="s" state="M"/>
+
+</net>
