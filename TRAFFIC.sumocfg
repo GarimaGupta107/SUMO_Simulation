@@ -1,0 +1,4 @@
+<input>
+    <net-file value="TRAFFIC.net.xml"/>
+    <route-files value="TRAFFIC.rou.xml"/>
+</input>
